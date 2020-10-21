@@ -47,20 +47,19 @@ const db = firebase.firestore();
 
 
 function getKey(collection, index) {
-    return db.collection(collection).get().then((querySnapshot) => {
-        return querySnapshot.map((doc) => {
-            return doc.data().maxLessons;
-        });
+    db.collection(collection).get().then((querySnapshot) => {
+        console.log(querySnapshot);
+        
     });
 }
+getKey("fix", 2);
+// getKey("fix", 2).then((data) => { return data[2] })
 
-getKey("fix", 2).then((data) => { return data[2] })
+//     (async () => {
+//         const fix = await getKey("fix", 2);
+//         console.log(fix);
 
-    (async () => {
-        const fix = await getKey("fix", 2);
-        console.log(fix);
-
-    })()
+//     })()
 
 
 /**
