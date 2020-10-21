@@ -10,56 +10,42 @@
 //              y: Einheit
 
 const db = firebase.firestore();
-//const docRef = db.collection("fix").doc("wUWqwE3QsztMFEfVlc9U");
 
-// var array = new Array();
-// async function getKey(collection, index) {
-//     await db.collection(collection).get().then(querySnapshot => {
-//         querySnapshot.forEach(doc => {
-//             array.push(doc.data().maxLessons);
-//         });
-//     });
-// };
+const documentFix = "wUWqwE3QsztMFEfVlc9U";
 
-// console.log(getKey("fix", 2))
+const protectedUrl = "https://europe-west1-shintaikan-6b670.cloudfunctions.net/getKey";
 
-// function load() {
-//     return new Promise(function(resolve, reject) {
-//         db.collection("fix").get().then(function (querySnapshot) {
-//             querySnapshot.forEach(function (doc) {
-//                 let data = doc.data().maxLessons
-//                 resolve(data);
-//             });
-//         });
-//     });
-// }
-
-// function loadMaxLesson(index) {
-//     let promise = load();
-//     var array = [];
-//     promise.then(
-//         data => {array.push(data); alert(array)}
-//     );
-//     console.log(array);
-//     return array;
-// }
-// alert(loadMaxLesson(2));
-
-
-function getKey(collection, index) {
-    db.collection(collection).get().then((querySnapshot) => {
-        console.log(querySnapshot);
-        
+async function get(collection, key) {
+    const response = await fetch(protectedUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "collection": collection,
+            "document": key
+        })
     });
+    const status = response.status;
+    if (status === 200) {
+        return response.json();
+    } else {
+        return status;
+    }
 }
-getKey("fix", 2);
-// getKey("fix", 2).then((data) => { return data[2] })
 
-//     (async () => {
-//         const fix = await getKey("fix", 2);
-//         console.log(fix);
 
-//     })()
+let res = get("fix", documentFix);
+res.then(function (result) {
+    console.log(result)
+})
+
+
+get("fix", documentFix).then(function (result) {
+    console.log(result)
+});
+
+
 
 
 /**
