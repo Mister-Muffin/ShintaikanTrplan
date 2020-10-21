@@ -10,81 +10,57 @@
 //              y: Einheit
 
 const db = firebase.firestore();
+//const docRef = db.collection("fix").doc("wUWqwE3QsztMFEfVlc9U");
 
+// var array = new Array();
+// async function getKey(collection, index) {
+//     await db.collection(collection).get().then(querySnapshot => {
+//         querySnapshot.forEach(doc => {
+//             array.push(doc.data().maxLessons);
+//         });
+//     });
+// };
 
-var docRef = db.collection("fix").doc("wUWqwE3QsztMFEfVlc9U");
+// console.log(getKey("fix", 2))
 
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-        currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-}
+// function load() {
+//     return new Promise(function(resolve, reject) {
+//         db.collection("fix").get().then(function (querySnapshot) {
+//             querySnapshot.forEach(function (doc) {
+//                 let data = doc.data().maxLessons
+//                 resolve(data);
+//             });
+//         });
+//     });
+// }
 
-// const ref = db.collection("fix");
+// function loadMaxLesson(index) {
+//     let promise = load();
+//     var array = [];
+//     promise.then(
+//         data => {array.push(data); alert(array)}
+//     );
+//     console.log(array);
+//     return array;
+// }
+// alert(loadMaxLesson(2));
 
-// const query = ref.where("maxLessons", "!=", true);
-
-// console.log(query);
-
-// var array = [];
 
 function getKey(collection, index) {
-    db.collection(collection).get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-            return (doc.data().maxLessons[index])
+    return db.collection(collection).get().then((querySnapshot) => {
+        return querySnapshot.map((doc) => {
+            return doc.data().maxLessons;
         });
     });
-};
+}
 
-console.log(getKey("fix", 2))
+getKey("fix", 2).then((data) => { return data[2] })
 
+    (async () => {
+        const fix = await getKey("fix", 2);
+        console.log(fix);
 
-// class City {
-//     constructor(name, state, country) {
-//         this.name = name;
-//         this.state = state;
-//         this.country = country;
-//     }
-//     toString() {
-//         return this.name + ', ' + this.state + ', ' + this.country;
-//     }
-// }
-
-// // Firestore data converter
-// var cityConverter = {
-//     toFirestore: function (city) {
-//         return {
-//             name: city.name,
-//             state: city.state,
-//             country: city.country
-//         }
-//     },
-//     fromFirestore: function (snapshot, options) {
-//         const data = snapshot.data(options);
-//         return new City(data.name, data.state, data.country)
-//     }
-// }
-
-// db.collection("cities").doc("LA")
-//     .withConverter(cityConverter)
-//     .get().then(function (doc) {
-//         if (doc.exists) {
-//             // Convert to City object
-//             //var city = doc.data();
-//             // Use a City instance method
-//             //console.log(city.toString());
-//         } else {
-//             console.log("No such document!")
-//         }
-//     }).catch(function (error) {
-//         console.log("Error getting document:", error)
-//     });
-
-// console.log(db.collection("cities").doc("LA").get().then(function (doc) {doc.data()}));
-
-
+    })()
 
 
 /**
@@ -120,28 +96,3 @@ function resetCurrent() {
         };
     };
 };
-
-
-
-
-
-// db.collection("users").add({
-//     first: "Ada",
-//     last: "Lovelace",
-//     born: 1815
-// })
-//     .then(function (docRef) {
-//         console.log("Document written with ID: ", docRef.id);
-//     })
-//     .catch(function (error) {
-//         console.error("Error adding document: ", error);
-//     });
-
-
-// db.collection("users").get().then((querySnapshot) => {
-//     querySnapshot.forEach((doc) => {
-//         console.log(doc.data());
-//     });
-// });
-
-
