@@ -80,6 +80,7 @@ function initCounter() {
 };
 
 
+
 /**
  * Hint:
  * Day and lesson starts with one, so if you want to modify
@@ -91,7 +92,7 @@ function setTrainerNumber(day, lesson, newTrainer) {
             const currentTrainer = doc.data().training_counter[day + '' + lesson].trainer;
             const tmp1 = day + '' + lesson;
             const tmp2 = doc.data().training_counter[day + '' + lesson].current - newTrainer + currentTrainer;
-                                                                        //9     -    2       +      1      = 8
+            //9     -    2       +      1      = 8
             updateCurrent("training_counter", tmp1, "trainer", newTrainer);
             updateCurrent("training_counter", tmp1, "current", tmp2);
             console.info(tmp2);
@@ -135,7 +136,7 @@ function decreaseCurrent(day, lesson) {
 function increase(day, lesson, increase) {
     db.collection("fix").get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
-            var tmp = doc.data().training_counter[day + '' + lesson].current  + increase;
+            var tmp = doc.data().training_counter[day + '' + lesson].current + increase;
             if (tmp > maxParticipiant) {
                 return false;
             }
@@ -145,16 +146,29 @@ function increase(day, lesson, increase) {
     });
 };
 
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-        currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
+function setValuesToHtml() {
+    db.collection("fix").get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+            for (var i = 1; i <= 5; i++) {
+                for (var j = 1; j <= 6; j++) {
+                    //
+                    console.log(`i: ${i} j:${j}`)
+                    try {
+                        document.getElementById(`${i}${j}`).innerText = `${doc.data().maxValue - doc.data().training_counter[`${i}${j}`].current - doc.data().training_counter[`${i}${j}`].trainer}` + `/${doc.data().maxValue - 1}`
+                    } catch (error) {
+
+                    }
+
+                }
+            }
+        });
+    });
 }
 
-initCounter();
-setTrainerNumber(1, 2, 2);
+setValuesToHtml();
+
+//initCounter();
+//setTrainerNumber(1, 2, 2);
 console.log("test");
 //setTimeout(decreaseCurrent, 10000, 1, 2);
 
