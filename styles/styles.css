@@ -26,3 +26,20 @@ td {
     width: 20%;
     height: 16, 6%;
 }
+
+a {
+    text-decoration:none;
+}
+
+a:hover {
+    text-decoration:underline;    
+}
+
+#msgBox {
+    background-color: rgb(202, 4, 4);
+    display: none;
+    color: white;
+    width: auto;
+    height: auto;
+    padding: 25px;
+}
