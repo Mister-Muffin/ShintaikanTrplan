@@ -13,14 +13,18 @@
       <h1>Login</h1>
 
       <label for="vorname"><b>Vorname</b></label>
-      <input type="text" name="vorname">
+      <input id="vorname" type="text" name="vorname">
       <br>
       <label for="nachname"><b>Nachname</b></label>
-      <input type="text" name="nachname">
+      <input id="nachname" type="text" name="nachname">
       <br><br>
       <button type="submit" id="btn" class="btn"">Anmelden</button>
       <br>
       <button type="button" class="btnCancel" onclick="cancelLogin()">Anmeldung abbrechen</button>
+  </div>
+  <div id="plswait">
+    <p>Du wirst angemeldet...</p>
+    <p>Bitte hab einen Moment Gedult.</p>
   </div>
   <script defer src="scripts/form.js"></script>
 </body>

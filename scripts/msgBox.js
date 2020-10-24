@@ -20,6 +20,10 @@ if (status === "200") {
     msgText.innerText = "Ein Fehler ist aufgetreten!"
     msgBox.style.display = "block";
     console.info("Error")
+} else if (status === "full") {
+    msgBox.style.backgroundColor = "rgb(202, 4, 4)";
+    msgText.innerText = "Der gewählte Kurs ist bereits voll!"
+    msgBox.style.display = "block";
 } else {
     msgBox.style.display = "";
 }
