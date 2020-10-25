@@ -1,25 +1,21 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+}body {
+  text-align: center !important;
 }
 
-body {
-    margin: 0;
+  #plswait {
+    display: none;
   }
 
-  .form-popup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 100vh;
-
+  #inputs {
+    display: grid;
+    margin-top: 25vh;
+    margin-bottom: 10vh;
   }
 
-  form {
-    border-color: aqua;
-    border-radius: 5px;
-    border: 2px;
-    border-style: dashed;
+  input {
+    text-align: center !important;
   }
 
   button {
@@ -30,7 +26,9 @@ body {
 
   .btn {
       background-color: rgb(59, 189, 55);
+      width: 400px;
   }
   .btnCancel {
       border-color: rgb(189, 55, 55);
+      width: 400px;
   }

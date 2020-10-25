@@ -6,25 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anmeldedaten</title>
   <link rel="stylesheet" href="styles/form.css">
+  <link rel="stylesheet" href="styles/loader.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
 </head>
 
 <body>
-  <div class="form-popup" class="form-container" id="myForm">
-      <h1>Login</h1>
 
-      <label for="vorname"><b>Vorname</b></label>
-      <input id="vorname" type="text" name="vorname">
+  <div class="form-popup" class="form-container" id="myForm">
+    <h1>Login</h1>
+    <h3>Damit du dich eintragen kannst, musst du deine Daten unten abgeben.</h3>
+    <div id="inputs">
+      <input id="vorname" placeholder="Vorname" type="text" name="vorname">
       <br>
-      <label for="nachname"><b>Nachname</b></label>
-      <input id="nachname" type="text" name="nachname">
-      <br><br>
-      <button type="submit" id="btn" class="btn"">Anmelden</button>
+      <input id="nachname" placeholder="Nachname" type="text" name="nachname">
       <br>
-      <button type="button" class="btnCancel" onclick="cancelLogin()">Anmeldung abbrechen</button>
+      <input id="email" placeholder="Email (optinoal)" type="text" name="email">
+      <span>Wenn du keine Email einträgst, bekommt du keine Bestätigung.</span>
+    </div>
+    <button type="submit" id="btn" class="btn"">Anmelden</button>
+      <br>
+      <button type=" button" class="btnCancel" onclick="cancelLogin()">Anmeldung abbrechen</button>
   </div>
   <div id="plswait">
-    <p>Du wirst angemeldet...</p>
-    <p>Bitte hab einen Moment Gedult.</p>
+    <div class="   text-center">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="sp sp-circle"></div>
+          <h3>Du wirst angemeldet...</h3>
+          <h4>Bitte hab einen Moment Geduld.</h4>
+        </div>
+      </div>
+    </div>
   </div>
   <script defer src="scripts/form.js"></script>
 </body>

@@ -2,7 +2,6 @@ function cancelLogin() {
     window.location.replace("/trainingsplan/?status=cancelled");
 }
 
-
 /**
  * 1. Datum abfragen
  * 2. Eingetragenes Datum berechnen
@@ -13,11 +12,21 @@ function cancelLogin() {
 
 const fieldVorName = document.getElementById("vorname");
 const fieldNachName = document.getElementById("nachname");
+const fieldEmail = document.getElementById("email");
 const form = document.getElementById("myForm");
 const plswait = document.getElementById("plswait");
 
+const vorname = fieldVorName.value.trim();
+const nachname = fieldVorName.value.trim();
+const email = fieldVorName.value.trim();
+
 const btn = document.getElementById("btn");
 btn.addEventListener("click", async function login() {
+
+    if (vorname <= 1 && nachname.length <= 1) {
+        return;
+    }
+
     form.style.display = "none";
     plswait.style.display = "block";
     const queryString = window.location.search;
@@ -35,8 +44,9 @@ btn.addEventListener("click", async function login() {
         body: JSON.stringify({
             "day": day,
             "lesson": lesson,
-            "firstname": fieldVorName.value,
-            "lastname": fieldNachName.value
+            "firstname": vorname,
+            "lastname": nachname,
+            "email": email
         })
     });
     if (response.status === 200) {

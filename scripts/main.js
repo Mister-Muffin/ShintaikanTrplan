@@ -143,9 +143,9 @@ function setValuesToHtml() {
                 } catch (error) {
 
                 }
-                if (doc.data().training_counter[`${i}${j}`].current <= 0) {
-                    document.getElementById(`${i}${j}`).disabled = true;
-                }
+                // if (doc.data().training_counter[`${i}${j}`].current <= 0) {
+                //     document.getElementById(`${i}${j}`).disabled = true;
+                // }
             }
         }
     });
