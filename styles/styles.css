@@ -54,6 +54,10 @@ a:hover {
     padding: 25px;
 }
 
+#rules {
+    color: red;
+}
+
 .counter {
     color: #FFFFFF;
     font-size: smaller;
