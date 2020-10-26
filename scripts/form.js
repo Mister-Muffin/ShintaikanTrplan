@@ -16,14 +16,14 @@ const fieldEmail = document.getElementById("email");
 const form = document.getElementById("myForm");
 const plswait = document.getElementById("plswait");
 
-const vorname = fieldVorName.value.trim();
-const nachname = fieldVorName.value.trim();
-const email = fieldVorName.value.trim();
-
 const btn = document.getElementById("btn");
 btn.addEventListener("click", async function login() {
-
-    if (vorname <= 1 && nachname.length <= 1) {
+    
+    const vorname = fieldVorName.value.trim();
+    const nachname = fieldVorName.value.trim();
+    const email = fieldEmail.value.trim();
+    
+    if (vorname.length <= 1 || nachname.length <= 1) {
         return;
     }
 
