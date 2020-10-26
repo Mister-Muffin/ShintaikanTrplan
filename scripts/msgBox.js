@@ -12,7 +12,7 @@ if (status === "200") {
     msgText.innerText = "Die Anmeldung war erfolgreich!"
     msgBox.style.display = "block";
 } else if (status === "cancelled") {
-    msgBox.style.backgroundColor = "rgb(202, 149, 4)";
+    msgBox.style.backgroundColor = "rgb(232, 145, 16)";
     msgText.innerText = "Die Anmeldung wurde abgebrochen."
     msgBox.style.display = "block";
 } else if (status === "error") {
@@ -25,5 +25,9 @@ if (status === "200") {
     msgText.innerText = "Der gewählte Kurs ist bereits voll!"
     msgBox.style.display = "block";
 } else {
-    msgBox.style.display = "";
+    msgBox.style.display = "none";
 }
+
+setTimeout(function () {
+    msgBox.style.display = "none";
+}, 10000);
