@@ -1,34 +1,37 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
-}body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
   text-align: center !important;
 }
 
-  #plswait {
-    display: none;
-  }
+#plswait {
+  display: none;
+}
 
-  #inputs {
-    display: grid;
-    margin-top: 25vh;
-    margin-bottom: 10vh;
-  }
+#inputs {
+  display: grid;
+  margin-top: 25vh;
+  margin-bottom: 10vh;
+}
 
-  input {
-    text-align: center !important;
-  }
+input {
+  text-align: center !important;
+}
 
-  button {
-    border-radius: 5px;
-    font-size: 24px;
-    border-width: 2px;
-  }
+button {
+  border-radius: 5px;
+  font-size: 24px;
+  border-width: 2px;
+}
 
-  .btn {
-      background-color: rgb(59, 189, 55);
-      width: 400px;
-  }
-  .btnCancel {
-      border-color: rgb(189, 55, 55);
-      width: 400px;
-  }
+.btn {
+  background-color: rgb(59, 189, 55);
+  width: 400px;
+}
+
+.btnCancel {
+  border-color: rgb(189, 55, 55);
+  width: 400px;
+}
