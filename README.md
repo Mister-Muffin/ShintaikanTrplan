@@ -3,4 +3,5 @@
 - [ ] Console.log weg
 - [ ] Cloud Firestore Regeln
 - [x] Ohne Email eintragen
-- [ ] Kalenderwoche
+- [x] Wochenanzeige
+- [ ] Trainer anpassen
