@@ -1,9 +1,10 @@
 # ShintaikanTrplan
 
-#### :warning: API-Keys im VCS
+## :warning: API-Keys im VCS
 
-# TODO:
+## TODO
+
 Console.log weg
 Cloud Firestore Regeln
-Ohne Email eintragen
-Kalenderwoche 
+[x] Ohne Email eintragen
+Kalenderwoche
