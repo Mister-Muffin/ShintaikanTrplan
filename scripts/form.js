@@ -16,15 +16,24 @@ const fieldEmail = document.getElementById("email");
 const form = document.getElementById("myForm");
 const plswait = document.getElementById("plswait");
 
+const emailRegex = '([a-z0-9]+@)+([a-z]+)+([.])+([a-z]+)';
+
 const btn = document.getElementById("btn");
 btn.addEventListener("click", async function login() {
-    
+
     const vorname = fieldVorName.value.trim();
-    const nachname = fieldVorName.value.trim();
-    const email = fieldEmail.value.trim();
-    
+    const nachname = fieldNachName.value.trim();
+    var email = fieldEmail.value.trim();
+
     if (vorname.length <= 1 || nachname.length <= 1) {
         return;
+    }
+    if (!email.match(emailRegex) && !email.length <= 0) {
+        alert("Die Email ist ungültig!");
+        return;
+    }
+    if (email.length <= 0) {
+        email = "undefined";
     }
 
     form.style.display = "none";
@@ -54,6 +63,8 @@ btn.addEventListener("click", async function login() {
         window.location.replace("/trainingsplan/?status=200");
     } else if (response.status === 406) {
         window.location.replace("/trainingsplan/?status=full");
+    } else if (response.status === 410) {
+        window.location.replace("/trainingsplan/?status=gone");
     } else {
         //e.preventDefault();     
         window.location.replace("/trainingsplan/?status=error");
