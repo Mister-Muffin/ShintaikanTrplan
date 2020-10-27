@@ -1,10 +1,7 @@
+
 # ShintaikanTrplan
-
 ## TODO
-
-Console.log weg
-
-Cloud Firestore Regeln
-
-[x] Ohne Email eintragen
-Kalenderwoche
+- [ ] Console.log weg
+- [x] Cloud Firestore Regeln
+- [ ] Ohne Email eintragen
+- [ ] Kalenderwoche
