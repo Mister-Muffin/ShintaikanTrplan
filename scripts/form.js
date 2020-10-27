@@ -2,14 +2,6 @@ function cancelLogin() {
     window.location.replace("/trainingsplan/?status=cancelled");
 }
 
-/**
- * 1. Datum abfragen
- * 2. Eingetragenes Datum berechnen
- * 3. Name auslesen
- * 4. Name eintragen
- * 5. Current anpassen
- */
-
 const fieldVorName = document.getElementById("vorname");
 const fieldNachName = document.getElementById("nachname");
 const fieldEmail = document.getElementById("email");
