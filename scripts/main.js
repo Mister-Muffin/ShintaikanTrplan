@@ -43,7 +43,7 @@ async function setValuesToHTML() {
         for (var i = 1; i <= 5; i++) {
             for (var j = 1; j <= 6; j++) {
                 try {
-                    document.getElementById(`${i}${j}`).innerText = `${doc.data().maxValue - doc.data().training_counter[`${i}${j}`].current - doc.data().training_counter[`${i}${j}`].trainer}` + `/${doc.data().maxValue - doc.data().training_counter[`${i}${j}`].trainer}`
+                    document.getElementById(`${i}${j}`).innerText = `${doc.data().maxValue - doc.data().training_counter[i + ''][j + ''].current - doc.data().training_counter[i + ''][j + ''].trainer}` + `/${doc.data().maxValue - doc.data().training_counter[i + ''][j + ''].trainer}`
                 } catch (error) {
 
                 }
