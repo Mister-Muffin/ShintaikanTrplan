@@ -15,8 +15,6 @@ const documentFix = "wUWqwE3QsztMFEfVlc9U";
 const calendarWeekElement = document.getElementById("nextWeek");
 
 
-
-
 const today = new Date();
 var wday = today.getDay();
 if (wday == 6) wday = -1;
