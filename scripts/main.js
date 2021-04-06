@@ -10,6 +10,9 @@
 //              y: Einheit
 
 const db = firebase.firestore();
+if (location.hostname === "localhost") {
+    db.useEmulator("localhost", 8080);
+}
 const documentFix = "wUWqwE3QsztMFEfVlc9U";
 
 const calendarWeekElement = document.getElementById("nextWeek");
