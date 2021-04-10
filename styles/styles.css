@@ -50,6 +50,7 @@ td {
     width: auto;
     height: auto;
     padding: 25px;
+    visibility: hidden;
 }
 
 #rules {
