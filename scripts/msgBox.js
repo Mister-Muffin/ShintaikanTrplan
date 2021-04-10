@@ -39,5 +39,5 @@ if (status === "200") {
 function clearStatus() {
     msgBox.style.visibility = "hidden";
     status = "";
-    window.history.replaceState("", "", "/");
+    window.history.replaceState("", "", window.location.href);
 }
