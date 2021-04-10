@@ -13,7 +13,7 @@ if (status === "200") {
     msgBox.style.visibility = "visible";
     setTimeout(clearStatus, waitTime);
 } else if (status === "cancelled") {
-    msgBox.style.backgroundColor = "rgb(232, 145, 16)";
+    msgBox.style.backgroundColor = "rgb(249, 224, 29)";
     msgText.innerText = "Die Anmeldung wurde abgebrochen."
     msgBox.style.visibility = "visible";
     setTimeout(clearStatus, waitTime);
