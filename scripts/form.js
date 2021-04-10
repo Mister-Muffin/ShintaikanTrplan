@@ -1,4 +1,4 @@
-const websiteRoot = window.location.hostname.includes("shintaikan.de") ? "trainingsplan/" : "/";
+const websiteRoot = window.location.hostname.includes("shintaikan.de") ? "/trainingsplan/" : "/";
 
 function cancelLogin() {
     window.location.replace(`${websiteRoot}?status=cancelled`);

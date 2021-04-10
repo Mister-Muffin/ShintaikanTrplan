@@ -8,7 +8,6 @@
 // Teilnehmerliste: Hashmap[dy] => [Participant0, Participant1, ...]
 //      wobei   d: Tag des Trainings
 //              y: Einheit
-const websiteRoot = window.location.hostname.includes("shintaikan.de") ? "trainingsplan/" : "/";
 
 const db = firebase.firestore();
 // if (location.hostname === "localhost") {
@@ -57,5 +56,5 @@ async function setValuesToHTML() {
 }
 
 function openLogin(id) {
-    window.location.href = `${websiteRoot}form.html?day=${id[0]}&lesson=${id[1]}`;
+    window.location.href = `form.html?day=${id[0]}&lesson=${id[1]}`;
 }
