@@ -1,5 +1,7 @@
+const websiteRoot = window.location.hostname.includes("shintaikan.de") ? "trainingsplan/" : "/";
+
 function cancelLogin() {
-    window.location.replace("/trainingsplan/?status=cancelled");
+    window.location.replace(`${websiteRoot}?status=cancelled`);
 }
 
 const fieldVorName = document.getElementById("vorname");
@@ -52,13 +54,13 @@ btn.addEventListener("click", async function login() {
     });
     if (response.status === 200) {
         //e.preventDefault();     
-        window.location.replace("/trainingsplan/?status=200");
+        window.location.replace(`${websiteRoot}?status=200`);
     } else if (response.status === 406) {
-        window.location.replace("/trainingsplan/?status=full");
+        window.location.replace(`${websiteRoot}?status=full`);
     } else if (response.status === 410) {
-        window.location.replace("/trainingsplan/?status=gone");
+        window.location.replace(`${websiteRoot}?status=gone`);
     } else {
         //e.preventDefault();     
-        window.location.replace("/trainingsplan/?status=error");
+        window.location.replace(`${websiteRoot}?status=error`);
     }
 });

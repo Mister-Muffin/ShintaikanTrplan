@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <header>
+        <h1>Trainingsanmeldung</h1>
+    </header>
     <div id="msgBox">
         <span id="msgText">Die Anmeldung war erfolgreich!</span>
     </div>
@@ -54,23 +57,21 @@
                 </td>
             </tr>
 
-            <tr>
-                <td>
-                    <a href="/trainingsplan/form.html?day=1&lesson=1">
-                        <p style="color: #00ff00;">16:15-17:15</p>
-                        <p style="color: #00ff00;">Kinder Karate bis inkl. 14 Jahre</p>
-                        <p class="counter" id="11"></p>
-                    </a>
+            <tr class="plan">
+                <td onclick="openLogin('11')">
+                    <br />
+                    <p style="color: #00ff00;">16:15-17:15</p>
+                    <p style="color: #00ff00;">Kinder Karate bis inkl. 14 Jahre</p>
+                    <p class="counter" id="11">LÄDT...</p>
                 </td>
                 <td>&nbsp;</td>
                 <td>
                 </td>
-                <td><br />
-                    <a href="/trainingsplan/form.html?day=4&lesson=1">
-                        <p style="color: #00ff00;">16:15-17:15</p>
-                        <p style="color: #00ff00;">Kinder Karate bis inkl. 14 Jahre</p>
-                        <p class="counter" id="41"></p>
-                    </a>
+                <td onclick="openLogin('41')">
+                    <br />
+                    <p style=" color: #00ff00;">16:15-17:15</p>
+                    <p style="color: #00ff00;">Kinder Karate bis inkl. 14 Jahre</p>
+                    <p class="counter" id="41">LÄDT...</p>
                 </td>
                 <td>
                 </td>
