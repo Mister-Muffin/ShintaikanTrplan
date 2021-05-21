@@ -1,4 +1,5 @@
-const websiteRoot = window.location.hostname.includes("shintaikan.de") ? "/trainingsplan/" : "/";
+/* eslint-disable no-unused-vars */
+const websiteRoot = window.location.hostname.includes("shintaikan.de") ? "/trainingsplan/" : "/public";
 
 function cancelLogin() {
     window.location.replace(`${websiteRoot}?status=cancelled`);
@@ -9,11 +10,14 @@ const fieldNachName = document.getElementById("nachname");
 const fieldEmail = document.getElementById("email");
 const form = document.getElementById("myForm");
 const plswait = document.getElementById("plswait");
+const formContainer = document.getElementById("myForm");
+const selectionContainer = document.getElementById("selection-container");
 
 const emailRegex = '([a-z0-9]+@)+([a-z]+)+([.])+([a-z]+)';
 
-const btn = document.getElementById("btn");
-btn.addEventListener("click", async function login() {
+let vaccinated = false;
+
+async function login() {
 
     const vorname = fieldVorName.value.trim();
     const nachname = fieldNachName.value.trim();
@@ -49,7 +53,8 @@ btn.addEventListener("click", async function login() {
             "lesson": lesson,
             "firstname": vorname,
             "lastname": nachname,
-            "email": email
+            "email": email,
+            "vaccinated": this.vaccinated
         })
     });
     if (response.status === 200) {
@@ -63,4 +68,16 @@ btn.addEventListener("click", async function login() {
         //e.preventDefault();     
         window.location.replace(`${websiteRoot}?status=error`);
     }
-});
+}
+
+function showFormular(vaccinated) {
+
+    this.vaccinated = vaccinated;
+
+    const submitBtn = document.getElementById("btnSubmit");
+    submitBtn.innerText = this.vaccinated ? "Als vollständig geimpft / genesen anmelden" : "Als nicht geimpft / genesen anmelden";
+
+    formContainer.style.display = "inherit";
+    selectionContainer.style.display = "none";
+
+}

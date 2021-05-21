@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anmeldedaten</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="styles/form.css">
   <link rel="stylesheet" href="styles/loader.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
@@ -12,7 +13,7 @@
 
 <body>
 
-  <div class="form-popup" class="form-container" id="myForm">
+  <div class="form-container" id="myForm">
     <h1>Login</h1>
     <h3>Damit du dich eintragen kannst, musst du deine Daten unten abgeben.</h3>
     <div id="inputs">
@@ -23,12 +24,23 @@
       <input id="email" placeholder="Email (optinoal)" type="text" name="email">
       <span>Wenn du keine Email einträgst, bekommt du keine Bestätigung.</span>
     </div>
-    <button type="submit" id="btn" class="btn"">Anmelden</button>
+    <button type="submit" onclick="login()" id="btnSubmit"">Anmelden</button>
       <br>
       <button type=" button" class="btnCancel" onclick="cancelLogin()">Anmeldung abbrechen</button>
   </div>
+
+  <div id="selection-container">
+    <h1>Traingssplan</h1>
+    <h3>Bitte wähle der Option aus.</h3>
+    <div class="selection-buttons">
+      <button onclick="showFormular(true)" type="button" class="btn1">Ich bin VOLLSTÄNDIG geimpft oder genesen</button>
+      <button onclick="showFormular(false)" type=" button" class="btn2">Ich bin NICHT geimpft oder genesen</button>
+    </div>
+    <button type=" button" class="btnCancel" onclick="cancelLogin()">Anmeldung abbrechen</button>
+  </div>
+
   <div id="plswait">
-    <div class="   text-center">
+    <div class="text-center">
       <div class="row">
         <div class="col-sm-2">
           <div class="sp sp-circle"></div>

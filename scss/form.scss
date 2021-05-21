@@ -1,0 +1,66 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+
+  body {
+    text-align: center !important;
+  }
+
+  input {
+    text-align: center !important;
+  }
+
+  button {
+    border-radius: 5px;
+    font-size: 24px;
+    border-width: 2px;
+
+    width: 400px;
+  }
+}
+
+#btnSubmit {
+  background-color: rgb(59, 189, 55);
+}
+
+.btnCancel {
+  border-color: rgb(189, 55, 55);
+}
+
+#plswait {
+  display: none;
+}
+
+.form-container {
+  display: none;
+
+  #inputs {
+    display: grid;
+    margin-top: 25vh;
+    margin-bottom: 10vh;
+  }
+
+}
+
+#selection-container {
+  display: inherit;
+
+  button {
+    margin-top: 3rem;
+  }
+
+  .selection-buttons {
+
+    display: flex;
+    justify-content: center;
+
+    .btn1 {
+      background-color: rgb(59, 189, 55);
+    }
+
+    .btn2 {
+      background-color: rgb(189, 55, 55);
+    }
+
+  }
+
+}
