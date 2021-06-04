@@ -41,15 +41,16 @@ td {
 }
 
 tr.plan {
-        td {
-            p {
-                color: #0099ff;
-            }
-            p.counter {
-                color: #ffffff;
-            }
+    td {
+        p {
+            color: #0099ff;
+        }
+
+        p.counter {
+            color: #ffffff;
         }
     }
+}
 
 
 .plan td:hover {
