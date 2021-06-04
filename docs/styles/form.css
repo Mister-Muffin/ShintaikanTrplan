@@ -1,0 +1,55 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+* body {
+  text-align: center !important;
+}
+* input {
+  text-align: center !important;
+}
+* button {
+  border-radius: 5px;
+  font-size: 24px;
+  border-width: 2px;
+  width: 400px;
+}
+
+#btnSubmit {
+  background-color: #3bbd37;
+}
+
+.btnCancel {
+  border-color: #bd3737;
+}
+
+#plswait {
+  display: none;
+}
+
+.form-container {
+  display: none;
+}
+.form-container #inputs {
+  display: grid;
+  margin-top: 25vh;
+  margin-bottom: 10vh;
+}
+
+#selection-container {
+  display: inherit;
+}
+#selection-container button {
+  margin-top: 3rem;
+}
+#selection-container .selection-buttons {
+  display: flex;
+  justify-content: center;
+}
+#selection-container .selection-buttons .btn1 {
+  background-color: #3bbd37;
+}
+#selection-container .selection-buttons .btn2 {
+  background-color: #bd3737;
+}
+
+/*# sourceMappingURL=form.css.map */
