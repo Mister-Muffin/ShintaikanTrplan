@@ -44,6 +44,9 @@ tr.plan td p {
 tr.plan td p.counter {
   color: #ffffff;
 }
+tr.plan td.outdoor p {
+  color: #b6df00;
+}
 
 .plan td:hover {
   background-color: #141b24;
