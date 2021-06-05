@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const websiteRoot = window.location.hostname.includes("shintaikan.de") ? "/" : "/public";
+const websiteRoot = window.location.hostname.includes("shintaikan.de") ? "/" : "/docs";
 
 function cancelLogin() {
     window.location.replace(`${websiteRoot}?status=cancelled`);
