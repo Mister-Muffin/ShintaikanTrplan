@@ -35,7 +35,7 @@ calendarWeekElement.innerText = `Woche vom: ${mondayDate.getDate()}.${mondayDate
 // Mondag: today - wday + 1
 // Freidag: today + (5 - wday)  
 
-setValuesToHTML();
+// setValuesToHTML();
 
 
 
