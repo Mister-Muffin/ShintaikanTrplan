@@ -1,213 +1,23 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trainingsplan</title>
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <title>vue</title>
+    <link href="css/app.81f0c939.css" rel="preload" as="style">
+    <link href="js/app.82270239.js" rel="preload" as="script">
+    <link href="js/chunk-vendors.1b87987d.js" rel="preload" as="script">
+    <link href="css/app.81f0c939.css" rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <h1>Trainingsplan</h1>
-    </header>
-    <div id="msgBox">
-        <span id="msgText">Die Anmeldung war erfolgreich!</span>
-    </div>
-    <div id="rules">
-    </div>
-    <table class="wp-block-table is-style-regular">
-        <tbody>
-            <tr>
-                <td>Karaminis:</td>
-                <td>Kinder Karate:</td>
-                <td>Jugend:</td>
-                <td>Erwachsene:</td>
-            </tr>
-            <td>~ 3 Jahre</td>
-            <td>Einschulung</td>
-            <td>ca. 11-15 Jahre</td>
-            <td>ca. 16 Jahre</td>
-            </tr>
-        </tbody>
-    </table>
-    <h3 id="nextWeek"></h3>
-    <table>
-        <tbody>
-            <tr class="header">
-                <td>
-                    <p><em> Montag </em></p>
-                </td>
-                <td>
-                    <p><em> Dienstag </em></p>
-                </td>
-                <td>
-                    <p><em> Mittwoch </em></p>
-                </td>
-                <td>
-                    <p><em> Donnerstag </em></p>
-                </td>
-                <td>
-                    <p><em> Freitag </em></p>
-                </td>
-            </tr>
-            <!-- <tr class="plan">
-                <td></td>
-                <td></td>
-                <td>
-                </td>
-                <td></td>
-                <td>
-                </td>
-            </tr> -->
-            <tr class="plan">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <br />
-                    <p>16:15-17:00<br>Kinder Karate</p>
-                    <p>Trainingsort: Dojo</p>
-                    <p>Rüdiger</p>
-                    <p class="counter" id="42"></p>
-                </td>
-                <td class="outdoor">
-                    <br />
-                    <p>15:15-15:45<br>Karaminis</p>
-                    <p>Trainingsort: Leisnerstraße</p>
-                    <p>Keine Testpflicht</p>
-                    <p>Tillmann</p>
-                    <p class="counter" id="52"></p>
-                </td>
-            </tr>
-            <tr class="plan">
-                <td></td>
-                <td>
-                </td>
-                <td>
-                    <br />
-                    <p>17:00-17:45<br>Karaminis</p>
-                    <p>Trainingsort: Dojo</p>
-                    <p>Maximé</p>
-                    <p class="counter" id="33"></p>
-                </td>
-                <td>
-                    <br />
-                    <p>17:05-17:50<br>Kinder Karate</p>
-                    <p>Trainingsort: Dojo</p>
-                    <p>Rüdiger</p>
-                    <p class="counter" id="43"></p>
-                </td>
-                <td class="outdoor">
-                    <br />
-                    <p>16:00-16:30<br>Karaminis</p>
-                    <p>Trainingsort: Leisnerstraße</p>
-                    <p>Keine Testpflicht</p>
-                    <p>Tillmann</p>
-                    <p class="counter" id="53"></p>
-                </td>
-            </tr>
-            <tr class="plan">
-                <td>
-                    <br />
-                    <p>18:10-19:10<br>Kinder & Jugend</p>
-                    <p>Trainingsort: Dojo</p>
-                    <p>Rüdiger</p>
-                    <p class="counter" id="14"></p>
-                </td>
-                <td>
-                    <br />
-                    <p>18:10-19:10<br>Jugend</p>
-                    <p>Trainingsort: Dojo</p>
-                    <p>Felix</p>
-                    <p class="counter" id="24"></p>
-                </td>
-                <td>
-                    <br />
-                    <p>17:50-18:50<br>Kinder Karate</p>
-                    <p>Trainingsort: Dojo</p>
-                    <p>Jannis</p>
-                    <p class="counter" id="34"></p>
-                </td>
-                <td>
-                    <br />
-                    <p>17:55-19:10<br>Jugend & Erwachsene</p>
-                    <p>Trainingsort: Dojo</p>
-                    <p>Rüdiger</p>
-                    <p class="counter" id="44"></p>
-                </td>
-                <td class="outdoor">
-                    <br />
-                    <p>17:00-18:00<br>Kinder Karate & Jugend</p>
-                    <p>Trainingsort: Seepark</p>
-                    <p>Keine Testpflicht</p>
-                    <p>Tillmann</p>
-                    <p class="counter" id="54"></p>
-                </td>
-            </tr>
-            <tr class="plan">
-                <td>
-                    <br />
-                    <p>19:15-20:30<br>Erwachsene</p>
-                    <p>Trainingsort: Dojo</p>
-                    <p>Rüdiger</p>
-                    <p class="counter" id="15"></p>
-                </td>
-                <td>
-                    <br />
-                    <p>19:15-20:30<br>Erwachsene</p>
-                    <p>Trainingsort: Dojo</p>
-                    <p>Felix</p>
-                    <p class="counter" id="25"></p>
-                </td>
-                <td>
-                    <br />
-                    <p>19:00-20:00<br>Karate & Selbstverteidigung</p>
-                    <p>Trainingsort: Dojo</p>
-                    <p>Jannis</p>
-                    <p class="counter" id="35"></p>
-                </td>
-                <td></td>
-                <td>
-                    <br />
-                    <p>19:00-20:00<br>Kata Training</p>
-                    <p>Trainingsort: Dojo</p>
-                    <p>Giulia</p>
-                    <p class="counter" id="55"></p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
-
-    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-
-    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
-
-    <script>
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAd5SQiFe5RRm954rTLRnEPPGEYznSMSBo",
-            authDomain: "shintaikan-6b670.firebaseapp.com",
-            databaseURL: "https://shintaikan-6b670.firebaseio.com",
-            projectId: "shintaikan-6b670",
-            storageBucket: "shintaikan-6b670.appspot.com",
-            messagingSenderId: "929946590509",
-            appId: "1:929946590509:web:959c530137d613d9c507a4"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-
-    </script>
-    <script src="scripts/main.js"></script>
-    <script defer src="scripts/msgBox.js"></script>
-
-
+<body><noscript><strong>We're sorry but vue doesn't work properly without JavaScript enabled. Please enable it to
+            continue.</strong></noscript>
+    <div id="app"></div>
+    <script src="js/chunk-vendors.1b87987d.js"></script>
+    <script src="js/app.82270239.js"></script>
 </body>
 
 </html>

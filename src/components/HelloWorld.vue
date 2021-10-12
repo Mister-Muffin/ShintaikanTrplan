@@ -1,7 +1,8 @@
 <template>
   <div v-if="time" v-bind:style="{ color: color }" class="hello">
     <span>{{ time }} - {{ end }}</span>
-    <span>{{ selected }}</span>
+    <span v-if="selected != 'Benutzerdefiniert'">{{ selected }}</span>
+    <span v-else>{{ customText }}</span>
   </div>
 </template>
 

@@ -21,11 +21,11 @@
       <tr v-for="i in 5" :key="i">
         <td v-for="j in 5" :key="j">
           <HelloWorld
-            v-if="response[`${i}` + `${j}`]"
+            v-if="response[`${j}` + `${i}`]"
             :db="db"
             :day="j"
             :session="i"
-            :data="response[`${i}` + `${j}`]"
+            :data="response[`${j}` + `${i}`]"
           />
           <HelloWorld v-else :db="db" :day="j" :session="i" :data="{}" />
         </td>
@@ -71,7 +71,6 @@ export default {
     };
   },
   async mounted() {
-    
     const querySnapshot = await getDocs(collection(db, "times"));
     querySnapshot.forEach((doc) => {
       this.response[`${doc.id}`] = doc.data();
