@@ -90,10 +90,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: rgb(228, 228, 228);
+  color: rgb(245, 245, 245);
   margin-top: 60px;
 }
 td {
   border: 1px solid silver;
+  width: 20%;
 }
 </style>

@@ -45,7 +45,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 * {
-  margin-bottom: 3vh;
+  margin-top: 1.5vh;
+   margin-bottom: 1.5vh;
 }
 .hello {
   display: grid;
