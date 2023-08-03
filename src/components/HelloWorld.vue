@@ -46,33 +46,17 @@ export default {
 <style scoped>
 * {
   margin-top: 1.5vh;
-   margin-bottom: 1.5vh;
-}
-.hello {
-  display: grid;
-}
-* {
-  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1.5vh;
   font-weight: bold;
   font-size: 30px;
 }
 
-body {
-  text-align: center;
+.hello {
+  display: grid;
 }
 
 table {
   width: 100%;
   height: 100%;
-}
-
-.header {
-  color: #ffffff;
-}
-
-td {
-  border: 2px solid silver;
-  width: 20%;
-  height: 16, 6%;
 }
 </style>

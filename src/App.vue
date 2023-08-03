@@ -86,15 +86,15 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: rgb(245, 245, 245);
-  margin-top: 60px;
+  margin-top: 5vh;
 }
+
 td {
-  border: 1px solid silver;
+  border: 1px solid black;
   width: 20%;
 }
 </style>
