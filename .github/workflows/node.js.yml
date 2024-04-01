@@ -15,15 +15,7 @@ concurrency:
 
 jobs:
   build:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -34,6 +26,28 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
 
+      - uses: actions/cache/save@v3
+        id: cache
+        with:
+          path: docs
+          key: ${{ runner.os }}-${{ github.sha }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+    steps:
+      - uses: actions/cache/restore@v3
+        id: cache
+        with:
+          path: docs
+          key: ${{ runner.os }}-${{ github.sha }}
+          fail-on-cache-miss: true
       # Upload to GitHub pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
