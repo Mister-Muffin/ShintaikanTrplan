@@ -59,3 +59,21 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  clean:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cleanup
+        run: |
+          gh extension install actions/gh-actions-cache
+
+          ## Setting this to not fail the workflow while deleting cache keys.
+          set +e
+          echo "Deleting cache..."
+          gh actions-cache delete $CACHE_KEY -R $REPO --confirm
+          echo "Done"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CACHE_KEY: ${{ runner.os }}-${{ github.sha }}
+          REPO: ${{ github.repository }}
