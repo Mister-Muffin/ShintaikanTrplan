@@ -19,14 +19,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "20.x"
           cache: "npm"
       - run: npm ci
       - run: npm run build --if-present
 
-      - uses: actions/cache/save@v3
+      - uses: actions/cache/save@v4
         id: cache
         with:
           path: docs
@@ -42,7 +42,7 @@ jobs:
       pages: write # to deploy to Pages
       id-token: write # to verify the deployment originates from an appropriate source
     steps:
-      - uses: actions/cache/restore@v3
+      - uses: actions/cache/restore@v4
         id: cache
         with:
           path: docs
