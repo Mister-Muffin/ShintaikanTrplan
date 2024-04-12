@@ -1,4 +1,5 @@
 <template>
+  <span>Hinweis: A = Anfängerkarate | F = Fortgeschritten</span>
   <table style="width: 100%">
     <tbody v-if="response">
       <tr>
@@ -90,7 +91,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 5vh;
+  margin: 0;
 }
 
 td {
