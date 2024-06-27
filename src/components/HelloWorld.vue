@@ -48,7 +48,7 @@ export default {
   margin-top: 1.5vh;
   margin-bottom: 1.5vh;
   font-weight: 500;
-  font-size: 1.25em;
+  font-size: 1.12em;
 }
 
 .hello {
