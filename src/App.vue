@@ -1,6 +1,6 @@
 <template>
   <span>Hinweis: A = Anfängerkarate | F = Fortgeschritten</span>
-  <table style="width: 100%">
+  <table>
     <tbody v-if="response">
       <tr>
         <td>
@@ -93,9 +93,16 @@ export default {
   text-align: center;
   margin: 0;
 }
+</style>
+
+<style scoped>
+table {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 800px;
+}
 
 td {
   border: 1px solid black;
-  width: 20%;
 }
 </style>

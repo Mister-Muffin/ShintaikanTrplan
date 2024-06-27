@@ -47,16 +47,11 @@ export default {
 * {
   margin-top: 1.5vh;
   margin-bottom: 1.5vh;
-  font-weight: bold;
-  font-size: 30px;
+  font-weight: 500;
+  font-size: 1.25em;
 }
 
 .hello {
   display: grid;
-}
-
-table {
-  width: 100%;
-  height: 100%;
 }
 </style>
