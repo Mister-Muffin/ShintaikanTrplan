@@ -81,10 +81,12 @@ export default {
 table {
   table-layout: fixed;
   width: 100%;
-  min-width: 800px;
+  min-width: 980px;
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 
 td {
-  border: 1px solid black;
+  border: 1px dotted gray;
 }
 </style>
