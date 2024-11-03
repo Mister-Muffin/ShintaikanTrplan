@@ -18,9 +18,15 @@
         <td>
           <p><em> Freitag </em></p>
         </td>
+        <td>
+          <p><em> Samstag </em></p>
+        </td>
+        <td>
+          <p><em> Sonntag </em></p>
+        </td>
       </tr>
       <tr v-for="i in 5" :key="i">
-        <td v-for="j in 5" :key="j">
+        <td v-for="j in 7" :key="j">
           <HelloWorld
             v-if="response[`${j}` + `${i}`]"
             :db="db"
@@ -36,29 +42,10 @@
 </template>
 
 <script>
+import { db } from "./firebase.js";
 import HelloWorld from "./components/HelloWorld.vue";
+import { collection, getDocs } from "firebase/firestore";
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAd5SQiFe5RRm954rTLRnEPPGEYznSMSBo",
-  authDomain: "shintaikan-6b670.firebaseapp.com",
-  databaseURL: "https://shintaikan-6b670.firebaseio.com",
-  projectId: "shintaikan-6b670",
-  storageBucket: "shintaikan-6b670.appspot.com",
-  messagingSenderId: "929946590509",
-  appId: "1:929946590509:web:7107bf53389ab56dc507a4",
-};
-
-// Initialize Firebase
-// eslint-disable-next-line no-unused-vars
-initializeApp(firebaseConfig);
-let i = 1;
-let j = 1;
-const db = getFirestore();
 export default {
   name: "App",
   components: {
@@ -75,12 +62,7 @@ export default {
     const querySnapshot = await getDocs(collection(db, "times"));
     querySnapshot.forEach((doc) => {
       this.response[`${doc.id}`] = doc.data();
-      console.log(`${doc.id} => ${doc.data()}`);
     });
-    console.log(JSON.parse(JSON.stringify(this.$data.response)));
-    console.log(
-      JSON.parse(JSON.stringify(this.$data.response[`${i}` + `${j}`]))
-    );
   },
 };
 </script>

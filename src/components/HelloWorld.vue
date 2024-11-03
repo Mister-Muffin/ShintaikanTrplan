@@ -7,21 +7,6 @@
 </template>
 
 <script>
-import { getFirestore } from "firebase/firestore";
-import { initializeApp } from "@firebase/app";
-
-initializeApp({
-  apiKey: "AIzaSyAd5SQiFe5RRm954rTLRnEPPGEYznSMSBo",
-  authDomain: "shintaikan-6b670.firebaseapp.com",
-  databaseURL: "https://shintaikan-6b670.firebaseio.com",
-  projectId: "shintaikan-6b670",
-  storageBucket: "shintaikan-6b670.appspot.com",
-  messagingSenderId: "929946590509",
-  appId: "1:929946590509:web:7107bf53389ab56dc507a4",
-});
-
-getFirestore();
-
 export default {
   name: "HelloWorld",
   props: {
@@ -39,7 +24,6 @@ export default {
     };
   },
 };
-//console.log(this.data);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
